@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/step', App\Http\Controllers\Step\IndexController::class);
+Route::get('/step', App\Http\Controllers\Step\IndexController::class)->name('step.index');
+Route::post('/step/create', App\Http\Controllers\Step\CreateController::class)->name('step.create');
