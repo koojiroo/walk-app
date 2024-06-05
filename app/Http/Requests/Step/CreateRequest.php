@@ -27,4 +27,9 @@ class CreateRequest extends FormRequest
             'step' => 'required|max:1000000'
         ];
     }
+
+    public function step(): string
+    {
+        return $this->input('step');
+    }
 }

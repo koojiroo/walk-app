@@ -19,5 +19,10 @@
             <button type="submit">登録</button>
         </form>
     </div>
+    <div>
+        @foreach ($steps as $step)
+            <p>{{ $step->steps_count }}</p>
+        @endforeach
+    </div>
 </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Step;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Step\CreateRequest;
+use App\Models\Step;
 
 class CreateController extends Controller
 {
@@ -15,6 +16,9 @@ class CreateController extends Controller
      */
     public function __invoke(CreateRequest $request)
     {
-        //
+        $step = new Step;
+        $step->steps_count = $request->step();
+        $step->save();
+        return redirect()->route('step.index');
     }
 }
