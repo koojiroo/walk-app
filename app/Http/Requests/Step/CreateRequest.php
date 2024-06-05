@@ -24,7 +24,7 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'steps_count' => 'required|max:1000000'
+            'step' => 'required|max:1000000'
         ];
     }
 }
