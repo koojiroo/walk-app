@@ -13,5 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/step', App\Http\Controllers\Step\IndexController::class)->name('step.index');
-Route::post('/step/create', App\Http\Controllers\Step\CreateController::class)->name('step.create');
+Route::get('/step', App\Http\Controllers\Step\IndexController::class)
+->name('step.index');
+Route::post('/step/create', App\Http\Controllers\Step\CreateController::class)
+->name('step.create');
+Route::get('/step/update/{stepId}', App\Http\Controllers\Step\Update\IndexController::class)
+->name('step.update.index')->where('stepId', '[0-9]+');
+Route::put('/step/update/{stepId}', App\Http\Controllers\Step\Update\PutController::class)
+->name('step.update.put')->where('stepId', '[0-9]+');
