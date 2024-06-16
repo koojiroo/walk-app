@@ -19,6 +19,6 @@ class IndexController extends Controller
     {
         $stepId = (int) $request->route('stepId');
         $step = Step::where('id', $stepId)->firstOrFail();
-        dd($step);
+        return view('step.update')->with('step', $step);
     }
 }
